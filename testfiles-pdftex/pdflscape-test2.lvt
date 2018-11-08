@@ -1,8 +1,8 @@
 %%
-%% This is file `pdflscape-test1.lvt',
+%% This is file `pdflscape-test2.lvt',
 %% The original source files were:
 %%
-%% pdflscape.dtx  (with options: `test0,test1')
+%% pdflscape.dtx  (with options: `test0,test2')
 
 \input{regression-test}
 \NeedsTeXFormat{LaTeX2e}
@@ -10,15 +10,8 @@
 \usepackage{qstest}
 \IncludeTests{*}
 \LogTests{log}{*}{*}
-\usepackage{ifpdf}
-\ifpdf
-  \def\ExpectDriver{pdftex}%
-\fi
-\usepackage{ifxetex}%
-\ifxetex
-  \def\ExpectDriver{dvipdfm}%
-\fi
-\usepackage{pdflscape}[2016/05/14]
+\def\ExpectDriver{pdftex}
+\usepackage[pdftex]{pdflscape}[2016/05/14]
 \begin{document}\START
 \begin{qstest}{driver}{driver}
   \makeatletter
@@ -27,4 +20,4 @@
 \end{document}
 \endinput
 %%
-%% End of file `pdflscape-test1.tex'.
+%% End of file `pdflscape-test2.tex'.

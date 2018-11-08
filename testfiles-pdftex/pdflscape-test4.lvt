@@ -1,23 +1,18 @@
-%%
-%% This is file `pdflscape-test1.lvt',
+%% This is file `pdflscape-test4.tex',
 %% The original source files were:
 %%
-%% pdflscape.dtx  (with options: `test0,test1')
+%% pdflscape.dtx  (with options: `test0,test4')
 
+%dvipsone driver test so:
+\pdfoutput=0
 \input{regression-test}
 \NeedsTeXFormat{LaTeX2e}
 \documentclass{minimal}
 \usepackage{qstest}
 \IncludeTests{*}
 \LogTests{log}{*}{*}
-\usepackage{ifpdf}
-\ifpdf
-  \def\ExpectDriver{pdftex}%
-\fi
-\usepackage{ifxetex}%
-\ifxetex
-  \def\ExpectDriver{dvipdfm}%
-\fi
+\def\ExpectDriver{dvips}
+\usepackage[dvipsone]{graphics}
 \usepackage{pdflscape}[2016/05/14]
 \begin{document}\START
 \begin{qstest}{driver}{driver}
@@ -27,4 +22,4 @@
 \end{document}
 \endinput
 %%
-%% End of file `pdflscape-test1.tex'.
+%% End of file `pdflscape-test4.tex'.
