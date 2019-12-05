@@ -1,7 +1,7 @@
 % \iffalse meta-comment
 %
 % File: pdflscape.dtx
-% Version: 2016/05/14 v0.11
+% Version: 2019/12/15 v0.12
 % Info: Display of landscape pages in PDF
 %
 % Copyright (C)
@@ -79,7 +79,7 @@
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)}
+\Msg{* Package: pdflscape 2019/12/15 v0.12 Display of landscape pages in PDF (HO)}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -91,7 +91,7 @@
 This is a generated file.
 
 Project: pdflscape
-Version: 2016/05/14 v0.11
+Version: 2019/12/15 v0.12
 
 Copyright (C)
    2001, 2004, 2006-2008 Heiko Oberdiek
@@ -152,7 +152,7 @@ and the derived files
 %<*driver>
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesFile{pdflscape.drv}%
-  [2016/05/14 v0.11 Display of landscape pages in PDF (HO)]%
+  [2019/12/15 v0.12 Display of landscape pages in PDF (HO)]%
 \documentclass{ltxdoc}
 \usepackage{holtxdoc}[2011/11/22]
 \usepackage{graphics}
@@ -167,7 +167,7 @@ and the derived files
 % \GetFileInfo{pdflscape.drv}
 %
 % \title{The \xpackage{pdflscape} package}
-% \date{2016/05/14 v0.11}
+% \date{2019/12/15 v0.12}
 % \author{Heiko Oberdiek\thanks
 % {Please report any issues at \url{https://github.com/ho-tex/oberdiek/issues}}}
 %
@@ -234,7 +234,7 @@ and the derived files
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{pdflscape}%
-  [2016/05/14 v0.11 Display of landscape pages in PDF (HO)]
+  [2019/12/15 v0.12 Display of landscape pages in PDF (HO)]
 %    \end{macrocode}
 %
 % \subsection{Driver options}
@@ -273,6 +273,7 @@ and the derived files
 \else
   \expandafter\PassOptionsToPackage\expandafter{\PLS@temp}{lscape}%
 \fi
+\RequirePackage{iftex}[2019/11/07]%
 \RequirePackage{lscape}
 %    \end{macrocode}
 %
@@ -281,7 +282,6 @@ and the derived files
 % \subsubsection{Driver \xoption{pdftex}}
 %
 %    \begin{macrocode}
-\RequirePackage{ifpdf}[2006/02/20]
 \def\PLS@temp{pdftex}
 \ifpdf
   \ifx\PLS@driver\@empty
@@ -302,7 +302,6 @@ and the derived files
 % \subsubsection{Driver \xoption{xetex}}
 %
 %    \begin{macrocode}
-\RequirePackage{ifxetex}%
 \def\PLS@temp{dvipdfm}
 \ifxetex
   \ifx\PLS@driver\@empty
@@ -793,6 +792,11 @@ and the derived files
 %   \begin{Version}{2016/05/14 v0.11}
 %   \item
 %     LuaTeX Compatibility
+%   \end{Version}
+%   \begin{Version}{2019/12/15 v0.12}
+%   \item
+%     Documentation updates.
+%   \item \xpackage{iftex} package.
 %   \end{Version}
 % \end{History}
 %
