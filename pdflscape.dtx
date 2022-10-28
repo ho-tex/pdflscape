@@ -509,19 +509,18 @@ and the derived files
 %    \begin{macrocode}
 \def\PLS@temp{dvips}
 \ifx\PLS@temp\PLS@driver
-  \RequirePackage{atbegshi}%
-  \AtBeginShipout{\PLS@AtBeginShipout}%
+  \AddToHook{shipout/before}{\PLS@AtBeginShipout}%
   \let\PLS@AtBeginShipout\@empty
   \def\PLS@AddRotate#1{%
     \ifnum#1=0 %
     \else
       \def\PLS@AtBeginShipout{%
-        \global\setbox\AtBeginShipoutBox\vbox{%
+        \global\setbox\ShipoutBox\vbox{%
           \Gin@PS@raw{%
             [{ThisPage}\string<\string</Rotate #1\string>\string>%
             /PUT pdfmark%
           }%
-          \box\AtBeginShipoutBox
+          \box\ShipoutBox
         }%
       }%
     \fi
@@ -535,16 +534,15 @@ and the derived files
 %    \begin{macrocode}
 \def\PLS@temp{dvipdfm}
 \ifx\PLS@temp\PLS@driver
-  \RequirePackage{atbegshi}%
-  \AtBeginShipout{\PLS@AtBeginShipout}%
+  \AddToHook{shipout/before}{\PLS@AtBeginShipout}%
   \let\PLS@AtBeginShipout\@empty
   \def\PLS@AddRotate#1{%
     \ifnum#1=0 %
     \else
       \def\PLS@AtBeginShipout{%
-        \global\setbox\AtBeginShipoutBox\vbox{%
+        \global\setbox\ShipoutBox\vbox{%
           \special{pdf: put @thispage <</Rotate #1>>}%
-          \box\AtBeginShipoutBox
+          \box\ShipoutBox
         }%
       }%
     \fi
@@ -838,6 +836,7 @@ and the derived files
 %   \end{Version}
 %   \begin{Version}{2022-10-28 v0.13}
 %   \item Made the package compatible with the PDF management.
+%   \item Removed the dependency to atbegshi.
 %   \end{Version}
 % \end{History}
 %
