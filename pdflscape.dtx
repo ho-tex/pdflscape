@@ -62,6 +62,7 @@
 %
 % Installation:
 %    TDS:tex/latex/pdflscape/pdflscape.sty
+%    TDS:tex/latex/pdflscape/pdflscape-nometadata.sty
 %    TDS:doc/latex/pdflscape/pdflscape.pdf
 %    TDS:source/latex/pdflscape/pdflscape.dtx
 %
@@ -117,7 +118,8 @@ https://github.com/ho-tex/pdflscape/issues
 
 This work consists of the main source file pdflscape.dtx
 and the derived files
-   pdflscape.sty, pdflscape.pdf, pdflscape.ins, pdflscape.drv,
+   pdflscape.sty, pdflscape-nometadata.sty, pdflscape.pdf,
+   pdflscape.ins, pdflscape.drv,
 
 \endpreamble
 \let\MetaPrefix\DoubleperCent
@@ -138,6 +140,7 @@ and the derived files
 \Msg{* file into a directory searched by TeX:}
 \Msg{*}
 \Msg{*     pdflscape.sty}
+\Msg{*     pdflscape-nometadata.sty}
 \Msg{*}
 \Msg{* To produce the documentation run the file `pdflscape.drv'}
 \Msg{* through LaTeX.}
@@ -188,12 +191,12 @@ and the derived files
 % \subsection{Supported drivers}
 % 
 % If the PDF management is loaded by the use of \verb+\DocumentMetadata{}+ at
-% the begin of the document, the engines and backends supported by \texttt{l3backend}
+% the beginning of the document, the engines and backends supported by \texttt{l3backend}
 % can be used. Driver options are passed to graphics and are typically only needed if
 % \LaTeX{} is used with \texttt{dvipdfmx}. 
 % 
-% Without the PDF management the following driver options can be used (various are
-% simply alias to each other):
+% Without the PDF management the following driver options can be used (many are
+% simply aliases to each other):
 %
 % \begin{itemize}
 % \item \xoption{pdftex},\xoption{luatex}
