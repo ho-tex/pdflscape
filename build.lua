@@ -6,7 +6,7 @@ module = "pdflscape"
 textfiles = {"README.md"}
 unpackfiles = {'pdflscape.dtx'}
 
-packtdszip  = true
+
 
 checkconfigs = {"build","config-pdftex"}
 
