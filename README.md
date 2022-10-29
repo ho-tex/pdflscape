@@ -1,10 +1,6 @@
-# pdflscape
+# pdflscape package for LaTeX
 
 Version: 2022-10-28 v0.13
-
-
-pdflscape package for LaTeX
-
 
 Package pdflscape adds PDF support to the
 environment landscape of package lscape
