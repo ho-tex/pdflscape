@@ -6,13 +6,14 @@ module = "pdflscape"
 textfiles = {"README.md"}
 unpackfiles = {'pdflscape.dtx'}
 
-
+packtdszip  = false
 
 checkconfigs = {"build","config-pdftex"}
 
 maxprintline=10000
 checkruns = 2
 
+recordstatus=true
 
 function update_tag(file,content,tagname,tagdate)
 
